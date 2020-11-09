@@ -8,19 +8,19 @@ export function Sidebar() {
   return (
     <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
-        <li>
+        <li data-testid="inbox" className="sidebar__inbox">
           <span>
             <InboxIcon />
           </span>
           <span>Inbox</span>
         </li>
-        <li>
+        <li data-testid="today" className="sidebar__today">
           <span>
             <CalendarTodayIcon />
           </span>
           <span>Today</span>
         </li>
-        <li>
+        <li data-testid="next-seven" className="sidebar__nextSeven">
           <span>
             <DateRangeIcon />
           </span>
