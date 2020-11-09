@@ -11,10 +11,10 @@ export function Header() {
         </div>
         <div className="settings">
           <ul>
-            <li>
+            <li data-testid="quick-add-task-action" className="settings__add">
               <AddIcon />
             </li>
-            <li>
+            <li data-testid="dark-mode-action" className="settings__darkmode">
               <Brightness4Icon />
             </li>
           </ul>
