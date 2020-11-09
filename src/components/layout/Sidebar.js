@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import InboxIcon from "@material-ui/icons/Inbox";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import { useSelectedProjectValue } from "../../contexts";
 
 export function Sidebar() {
+  const { selectedProject } = useSelectedProjectValue();
+  const [active, setActive] = useState("inbox");
+  const [showProjects, setShowProjects] = useState(false);
+
   return (
     <div className="sidebar" data-testid="sidebar">
       <ul className="sidebar__generic">
