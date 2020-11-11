@@ -4,11 +4,13 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import { useSelectedProjectValue } from "../../contexts";
+import { Projects } from "../Projects";
+import { AddProject } from "../AddProject";
 
 export function Sidebar() {
   const { selectedProject } = useSelectedProjectValue();
   const [active, setActive] = useState("inbox");
-  const [showProjects, setShowProjects] = useState(false);
+  const [showProjects, setShowProjects] = useState(true);
 
   return (
     <div className="sidebar" data-testid="sidebar">
@@ -38,7 +40,8 @@ export function Sidebar() {
         </span>
         <h2>Projects</h2>
       </div>
-      <ul className="sidebar__projects">Projects will be here</ul>
+      <ul className="sidebar__projects">{showProjects && <Projects />}</ul>
+      {showProjects && <AddProject />}
     </div>
   );
 }

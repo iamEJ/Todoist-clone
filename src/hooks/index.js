@@ -10,11 +10,11 @@ export const useTasks = (selectedProject) => {
     let unsubscribe = firebase
       .firestore()
       .collection("tasks")
-      .where("userid", "==", "abc123");
+      .where("userId", "==", "abc123");
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
-        ? (unsubscribe = unsubscribe.where("projectid", "==", selectedProject))
+        ? (unsubscribe = unsubscribe.where("projectId", "==", selectedProject))
         : selectedProject === "TODAY"
         ? (unsubscribe = unsubscribe.where(
             "date",
@@ -56,13 +56,13 @@ export const useProjects = () => {
     firebase
       .firestore()
       .collection("projects")
-      .where("userid", "==", "abc123")
-      .orderBy("projectid")
+      .where("userId", "==", "abc123")
+      .orderBy("projectId")
       .get()
       .then((snapshot) => {
         const allProjects = snapshot.docs.map((project) => ({
-          docId: project.id,
           ...project.data(),
+          docId: project.id,
         }));
         if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
           setProjects(allProjects);
