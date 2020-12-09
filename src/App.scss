@@ -633,6 +633,14 @@ header {
 .add-project__plus {
   color: #dd4b39;
   font-size: 18px;
+  padding: 0 5px;
+}
+
+.add-project__hover:hover > .add-project__plus {
+  background: #dd4b39;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
 }
 
 .add-task__text,
