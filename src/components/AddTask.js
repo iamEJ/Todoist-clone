@@ -4,6 +4,7 @@ import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../contexts";
 import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import DateRangeIcon from "@material-ui/icons/DateRange";
+import ListAltIcon from "@material-ui/icons/ListAlt";
 
 export const AddTask = ({
   showAddTaskMain = true,
@@ -20,7 +21,7 @@ export const AddTask = ({
 
   const { selectedProject } = useSelectedProjectValue();
 
-  const AddTask = () => {
+  const addTask = () => {
     const projectId = project || selectedProject;
     let collatedDate = "";
 
@@ -64,6 +65,71 @@ export const AddTask = ({
         >
           <span className="add-task__plus">+</span>
           <span className="add-task__text">Add Task</span>
+        </div>
+      )}
+      {(showMain || showQuickAddTask) && (
+        <div className="add-task__main" data-testid="add-task-main">
+          {showQuickAddTask && (
+            <>
+              <div data-testid="quick-add-task">
+                <h2 className="header">Quick add task</h2>
+                <span
+                  className="add-task__cancel-x"
+                  data-testid="add-task-quick-cancel"
+                  onClick={() => {
+                    setShowMain(false);
+                    setShowProjectOverlay(false);
+                    setShowQuickAddTask(false);
+                  }}
+                >
+                  X
+                </span>
+              </div>
+            </>
+          )}
+          <p>Project overlay here</p>
+          <p>Task date here</p>
+          <input
+            className="add-task__content"
+            data-testid="add-task-content"
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+          />
+          <button
+            data-testid="add-task"
+            className="add-task__submit"
+            type="button"
+            onClick={() => addTask()}
+          >
+            Add task
+          </button>
+          {!showQuickAddTask && (
+            <span
+              className="add-task__cancel"
+              data-testid="add-task-main-cancel"
+              onClick={() => {
+                setShowMain(false);
+                setShowProjectOverlay(false);
+              }}
+            >
+              Cancel
+            </span>
+          )}
+          <span
+            className="add-task__project"
+            data-testid="show-project-overlay"
+            onClick={() => setShowProjectOverlay(!showProjectOverlay)}
+          >
+            <ListAltIcon />
+          </span>
+          <span
+            className="add-task__date"
+            data-testid="show-task-date-overlay"
+            onClick={() => setShowTaskDate(!showTaskDate)}
+          >
+            <DateRangeIcon />
+          </span>
         </div>
       )}
     </div>
