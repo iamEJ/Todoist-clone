@@ -662,6 +662,13 @@ header {
   &__list li {
     @include task-item();
     padding: 0;
+    display: flex;
+    align-items: center;
+
+    p,
+    span {
+      margin-left: 3px;
+    }
 
     div:nth-child(1) {
       padding: 10px;
@@ -689,6 +696,8 @@ header {
 .project-overlay {
   @include box-overlay();
   background-color: white;
+  width: 200px;
+  right: 0;
 
   @include mq("900px") {
     width: 200px;

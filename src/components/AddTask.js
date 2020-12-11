@@ -6,6 +6,7 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import { ProjectOverlay } from "./ProjectOverlay";
+import { TaskDate } from "./TaskDate";
 
 export const AddTask = ({
   showAddTaskMain = true,
@@ -93,7 +94,11 @@ export const AddTask = ({
             showProjectOverlay={showProjectOverlay}
             setShowProjectOverlay={setShowProjectOverlay}
           />
-          <p>Task date here</p>
+          <TaskDate
+            setTaskDate={setTaskDate}
+            showTaskDate={showTaskDate}
+            setShowTaskDate={setShowTaskDate}
+          />
           <input
             className="add-task__content"
             data-testid="add-task-content"
