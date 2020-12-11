@@ -135,11 +135,47 @@ $generic-bg: #db4c3f;
 /* Darkmode
   ============================================ */
 .darkmode {
+  background: #282828;
+
   header {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
-    background-color: #282828;
+    background-color: #222;
     border-color: transparent;
+  }
+  section .sidebar,
+  .tasks {
+    background: #282828;
+    color: lightgray;
+  }
+
+  section .sidebar ul li:hover {
+    color: #222;
+  }
+
+  .sidebar__generic li span {
+    color: lightgray;
+  }
+
+  .sidebar__generic .active span {
+    color: #222;
+  }
+
+  .sidebar__generic .active {
+    background-color: lightgray;
+  }
+
+  .sidebar__generic li:hover span {
+    color: #222;
+  }
+
+  .tasks__list li {
+    color: lightgray;
+  }
+
+  .sidebar__middle h2,
+  .sidebar__middle .MuiSvgIcon-root {
+    color: lightgray;
   }
 }
 
@@ -264,6 +300,8 @@ header {
   }
 
   li {
+    margin: 3px 0;
+
     &:hover .sidebar__project-delete {
       display: -webkit-box;
       display: -ms-flexbox;

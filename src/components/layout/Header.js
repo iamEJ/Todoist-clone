@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import AddIcon from "@material-ui/icons/Add";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 
-export function Header() {
+export function Header({ darkMode, setDarkMode }) {
+  const [shouldShowMain, setShouldShowMain] = useState(false);
+  const [showQuickAddTask, setShowQuickAddTask] = useState(false);
+
   return (
     <header className="header" data-testid="header">
       <nav>
@@ -14,7 +17,11 @@ export function Header() {
             <li data-testid="quick-add-task-action" className="settings__add">
               <AddIcon />
             </li>
-            <li data-testid="dark-mode-action" className="settings__darkmode">
+            <li
+              data-testid="dark-mode-action"
+              className="settings__darkmode"
+              onClick={() => setDarkMode(!darkMode)}
+            >
               <Brightness4Icon />
             </li>
           </ul>
