@@ -46,6 +46,9 @@ export function AddProject({ shouldShow = false }) {
             data-testid="hide-project-overlay"
             className="add-project__cancel"
             onClick={() => setShow(false)}
+            onKeyDown={() => setShow(false)}
+            role="button"
+            tabIndex={0}
           >
             Cancel
           </span>
@@ -57,6 +60,9 @@ export function AddProject({ shouldShow = false }) {
           data-testid="add-project__action"
           className="add-project__text"
           onClick={() => setShow(!show)}
+          onKeyDown={() => setShow(!show)}
+          role="button"
+          tabIndex={0}
         >
           Add Project
         </span>

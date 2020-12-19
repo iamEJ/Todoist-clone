@@ -28,6 +28,9 @@ export function IndividualProject({ project }) {
         className="sidebar__project-delete"
         data-testid="delete-project"
         onClick={() => setShowConfirm(!showConfirm)}
+        onKeyDown={() => setShowConfirm(!showConfirm)}
+        role="botton"
+        tabIndex={0}
       >
         <DeleteForeverRoundedIcon />
         {showConfirm && (
@@ -41,7 +44,14 @@ export function IndividualProject({ project }) {
                 >
                   Delete
                 </button>
-                <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
+                <span
+                  onClick={() => setShowConfirm(!showConfirm)}
+                  onKeyDown={() => setShowConfirm(!showConfirm)}
+                  role="botton"
+                  tabIndex={0}
+                >
+                  Cancel
+                </span>
               </div>
             </div>
           </div>

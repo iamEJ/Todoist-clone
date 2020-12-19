@@ -18,15 +18,24 @@ export function Sidebar() {
         <li
           data-testid="inbox"
           className={active === "inbox" ? "active" : undefined}
-          onClick={() => {
-            setActive("inbox");
-            setSelectedProject("INBOX");
-          }}
         >
-          <span>
-            <InboxIcon />
-          </span>
-          <span>Inbox</span>
+          <div
+            onClick={() => {
+              setActive("inbox");
+              setSelectedProject("INBOX");
+            }}
+            onKeyDown={() => {
+              setActive("inbox");
+              setSelectedProject("INBOX");
+            }}
+            role="button"
+            tabIndex={0}
+          >
+            <span>
+              <InboxIcon />
+            </span>
+            <span>Inbox</span>
+          </div>
         </li>
         <li
           data-testid="today"
@@ -36,28 +45,53 @@ export function Sidebar() {
             setSelectedProject("TODAY");
           }}
         >
-          <span>
-            <CalendarTodayIcon />
-          </span>
-          <span>Today</span>
+          <div
+            onClick={() => {
+              setActive("today");
+              setSelectedProject("TODAY");
+            }}
+            onKeyDown={() => {
+              setActive("today");
+              setSelectedProject("TODAY");
+            }}
+            role="button"
+            tabIndex={0}
+          >
+            <span>
+              <CalendarTodayIcon />
+            </span>
+            <span>Today</span>
+          </div>
         </li>
         <li
           data-testid="next_7"
           className={active === "next_7" ? "active" : undefined}
-          onClick={() => {
-            setActive("next_7");
-            setSelectedProject("NEXT_7");
-          }}
         >
-          <span>
-            <DateRangeIcon />
-          </span>
-          <span>Next 7 days</span>
+          <div
+            onClick={() => {
+              setActive("next_7");
+              setSelectedProject("NEXT_7");
+            }}
+            onKeyDown={() => {
+              setActive("next_7");
+              setSelectedProject("NEXT_7");
+            }}
+            role="button"
+            tabIndex={0}
+          >
+            <span>
+              <DateRangeIcon />
+            </span>
+            <span>Next 7 days</span>
+          </div>
         </li>
       </ul>
       <div
         className="sidebar__middle"
         onClick={() => setShowProjects(!showProjects)}
+        onKeyDown={() => setShowProjects(!showProjects)}
+        role="button"
+        tabIndex={0}
       >
         <span>
           <KeyboardArrowDownIcon

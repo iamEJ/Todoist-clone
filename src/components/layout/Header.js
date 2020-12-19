@@ -15,22 +15,31 @@ export function Header({ darkMode, setDarkMode }) {
         </div>
         <div className="settings">
           <ul>
-            <li
-              data-testid="quick-add-task-action"
-              className="settings__add"
-              onClick={() => {
-                setShowQuickAddTask(true);
-                setShouldShowMain(true);
-              }}
-            >
-              <AddIcon />
+            <li data-testid="quick-add-task-action" className="settings__add">
+              <div
+                onClick={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+                onKeyPress={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+                role="button"
+                tabIndex={0}
+              >
+                <AddIcon />
+              </div>
             </li>
-            <li
-              data-testid="dark-mode-action"
-              className="settings__darkmode"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              <Brightness4Icon />
+            <li data-testid="dark-mode-action" className="settings__darkmode">
+              <div
+                onClick={() => setDarkMode(!darkMode)}
+                onKeyPress={() => setDarkMode(!darkMode)}
+                role="button"
+                tabIndex={0}
+              >
+                <Brightness4Icon />
+              </div>
             </li>
           </ul>
         </div>
