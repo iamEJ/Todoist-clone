@@ -405,7 +405,7 @@ header {
       color: #333;
       font-size: 15px;
       font-weight: bold;
-      padding-bottom: 20px;
+      margin-top: 5px;
     }
   }
 
@@ -664,6 +664,7 @@ header {
 .add-project {
   @include no-select;
   cursor: pointer;
+  padding: 5px 0;
   margin-bottom: 20px;
 }
 

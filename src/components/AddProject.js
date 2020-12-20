@@ -58,6 +58,7 @@ export function AddProject({ shouldShow = false }) {
         <span className="add-project__plus">+</span>
         <span
           data-testid="add-project__action"
+          aria-label="Add project"
           className="add-project__text"
           onClick={() => setShow(!show)}
           onKeyDown={() => setShow(!show)}

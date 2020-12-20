@@ -31,6 +31,7 @@ export function IndividualProject({ project }) {
         onKeyDown={() => setShowConfirm(!showConfirm)}
         role="botton"
         tabIndex={0}
+        aria-label="Confirm Deletion of a Project"
       >
         <DeleteForeverRoundedIcon />
         {showConfirm && (
@@ -49,6 +50,7 @@ export function IndividualProject({ project }) {
                   onKeyDown={() => setShowConfirm(!showConfirm)}
                   role="botton"
                   tabIndex={0}
+                  aria-label="Cancel Adding Project, Do not Delete"
                 >
                   Cancel
                 </span>

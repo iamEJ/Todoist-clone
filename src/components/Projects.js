@@ -23,6 +23,7 @@ export function Projects({ activeValue = null }) {
         <div
           role="button"
           tabIndex={0}
+          aria-label={`Select ${project.name} as the Task Project`}
           onClick={() => {
             setActive(project.projectId);
             setSelectedProject(project.projectId);
