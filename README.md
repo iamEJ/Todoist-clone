@@ -2,10 +2,10 @@
 
 ## Made with ReactJs, Hooks, Material-UI, Firebase
 
-![Main page](/images/frontpage.jpg)
+![Main page](public/images/frontpage.jpg)
 
 <br />
 
-![Darkmode](/images/darkmode.jpg)
+![Darkmode](public/images/darkmode.jpg)
 
 <br />
