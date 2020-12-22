@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import moment from "moment";
 import { firebase } from "../firebase";
 import { useSelectedProjectValue } from "../contexts";
-import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import DateRangeIcon from "@material-ui/icons/DateRange";
 import ListAltIcon from "@material-ui/icons/ListAlt";
 import { ProjectOverlay } from "./ProjectOverlay";
